@@ -1,0 +1,16 @@
+
+
+1. Instalamos gh-pages
+
+    npm i gh-pages -D
+    npm i gh-pages --save--dev
+
+2. Configurar el homepage en el archivo vite.config
+
+    base: "/{nombre de mi repo en github}/"
+
+3. Configurar el el archivo package.json
+
+    "predeply": "npm run build",
+    "deploy": "gh-pages -d dist"
+
