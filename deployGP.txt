@@ -11,6 +11,12 @@
 
 3. Configurar el el archivo package.json
 
-    "predeply": "npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
+
+4. Agregar el homepage en el archivo package.json
+
+    "homepage": "http://{mi usuario}.github.io/{el nombre de mi repo}/"
+
+5. Ejecutamos el comando npm run deploy
 
