@@ -14,9 +14,7 @@ const Formulario = () => {
 
     const imprimirDatos = () =>{
 
-
         console.log(`Datos ingresados en el formulario. ${nombre} - ${apellido} - ${provincia}`)
-
 
         //A. Opción 1
         //1. Creamos un objeto de tipo persona para guardar en el arreglo de datos
@@ -49,6 +47,27 @@ const Formulario = () => {
 
     }
 
+    const datosFormulario = (e) => {
+
+        e.preventDefault();
+
+        const usuario = {
+            nombre,
+            apellido,
+            provincia
+        }
+
+        const nuevoUsuario = [...datos, usuario]
+
+        setDatos(nuevoUsuario);
+
+        window.localStorage.setItem('datos', JSON.stringify(nuevoUsuario));
+
+        alert(`Datos ingresados en el formulario: ${nombre} - ${apellido} - ${provincia}`);
+
+        limpiarDatos();
+    }
+
     function limpiarDatos() {
         setNombre('');
         setApellido('');
@@ -64,7 +83,7 @@ const Formulario = () => {
             </h1>
 
             <div className="container">
-                <form id="formLogin">
+                <form id="formLogin" onSubmit={datosFormulario}>
                     <div className="mb-3">
                         <label className="form-label">Nombre: </label>
                         <input 
@@ -95,6 +114,9 @@ const Formulario = () => {
                             onChange={(e) => setProvincia(e.target.value)}
                             required 
                         />
+                    </div>
+                    <div className="mb-3 text-center">
+                        <button type='submit' className="btn btn-success w-50">Acción sobre el Formulario</button>
                     </div>
                     <div className="mb-3 text-center">
                         <button onClick={ imprimirDatos } type="button" className="btn btn-success w-50">Cargar Usuarios</button>
