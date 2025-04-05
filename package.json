@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "engines": {
-    "node": ">=16.0.0" // Cambia esto a la versión que prefieras
+    "node": ">=16.0.0"
   },
   "homepage": "http://bernalpas.github.io/appvie/",
   "scripts": {
